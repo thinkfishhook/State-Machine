@@ -20,7 +20,7 @@ public class StateMachine<T: StateMachineDelegate> {
     
     public func transition(to newState: T.State) -> Bool
     {
-        switch state.shouldTransition(from: state, to: newState) {
+        switch state.shouldTransition(to: newState) {
         case .continue:
             state = newState
             return true

@@ -3,7 +3,7 @@
 //
 
 public protocol StateMachineStateType {
-    func shouldTransition(from: Self, to: Self) -> Should<Self>
+    func shouldTransition(to nextState: Self) -> Should<Self>
 }
 
 public enum Should<T> {
