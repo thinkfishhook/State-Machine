@@ -1,0 +1,16 @@
+language: objective-c
+osx_image: xcode9
+
+branches:
+  only:
+    - master
+
+before_script:
+  - export TRAVIS_COMMIT_MSG=$(git log --since="24 hours" --date=short --format="(%cd) %s" --no-merges)
+  - gem install fastlane
+
+script:
+  - if [ $TRAVIS_PULL_REQUEST != "false" ]; then fastlane ios unit_test; fi
+
+notifications:
+  email: false
