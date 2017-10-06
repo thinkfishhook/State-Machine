@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2A25EC111F72E00500305160 /* StateMachine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A25EC071F72E00500305160 /* StateMachine.framework */; };
-		2A25EC161F72E00500305160 /* State_MachineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A25EC151F72E00500305160 /* State_MachineTests.swift */; };
+		2A25EC161F72E00500305160 /* StateMachineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A25EC151F72E00500305160 /* StateMachineTests.swift */; };
 		2A25EC181F72E00500305160 /* State_Machine.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A25EC0A1F72E00500305160 /* State_Machine.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2A25EC221F72E01A00305160 /* StateMachineDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A25EC211F72E01A00305160 /* StateMachineDelegate.swift */; };
 		2A25EC241F72E03200305160 /* StateMachineStateType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A25EC231F72E03200305160 /* StateMachineStateType.swift */; };
@@ -30,7 +30,7 @@
 		2A25EC0A1F72E00500305160 /* State_Machine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = State_Machine.h; sourceTree = "<group>"; };
 		2A25EC0B1F72E00500305160 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A25EC101F72E00500305160 /* State MachineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "State MachineTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2A25EC151F72E00500305160 /* State_MachineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State_MachineTests.swift; sourceTree = "<group>"; };
+		2A25EC151F72E00500305160 /* StateMachineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateMachineTests.swift; sourceTree = "<group>"; };
 		2A25EC171F72E00500305160 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A25EC211F72E01A00305160 /* StateMachineDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateMachineDelegate.swift; sourceTree = "<group>"; };
 		2A25EC231F72E03200305160 /* StateMachineStateType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateMachineStateType.swift; sourceTree = "<group>"; };
@@ -77,11 +77,11 @@
 		2A25EC091F72E00500305160 /* State Machine */ = {
 			isa = PBXGroup;
 			children = (
-				2A25EC0A1F72E00500305160 /* State_Machine.h */,
 				2A25EC0B1F72E00500305160 /* Info.plist */,
+				2A25EC0A1F72E00500305160 /* State_Machine.h */,
+				2A25EC251F72E05800305160 /* StateMachine.swift */,
 				2A25EC211F72E01A00305160 /* StateMachineDelegate.swift */,
 				2A25EC231F72E03200305160 /* StateMachineStateType.swift */,
-				2A25EC251F72E05800305160 /* StateMachine.swift */,
 			);
 			path = "State Machine";
 			sourceTree = "<group>";
@@ -89,8 +89,8 @@
 		2A25EC141F72E00500305160 /* State MachineTests */ = {
 			isa = PBXGroup;
 			children = (
-				2A25EC151F72E00500305160 /* State_MachineTests.swift */,
 				2A25EC171F72E00500305160 /* Info.plist */,
+				2A25EC151F72E00500305160 /* StateMachineTests.swift */,
 			);
 			path = "State MachineTests";
 			sourceTree = "<group>";
@@ -216,7 +216,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A25EC161F72E00500305160 /* State_MachineTests.swift in Sources */,
+				2A25EC161F72E00500305160 /* StateMachineTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
