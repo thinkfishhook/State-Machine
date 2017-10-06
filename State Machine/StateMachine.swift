@@ -26,7 +26,6 @@ public class StateMachine<T: StateMachineDelegate> {
             return true
             
         case .redirect(let redirectState):
-            state = newState
             return transition(to: redirectState)
             
         case .abort:
