@@ -5,5 +5,5 @@
 public protocol StateMachineDelegate: class {
     
     associatedtype State: StateMachineStateType
-    func didTransition(from: State, to: State)
+    func didTransition(from oldState: State, to newState: State)
 }

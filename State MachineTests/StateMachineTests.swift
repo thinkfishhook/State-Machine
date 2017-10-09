@@ -32,9 +32,9 @@ class StateMachineTests: XCTestCase {
         
         var transitions: [ (from: StateMachineTests.State, to: StateMachineTests.State) ] = []
         
-        func didTransition(from: StateMachineTests.State, to: StateMachineTests.State)
+        func didTransition(from oldState: StateMachineTests.State, to newState: StateMachineTests.State)
         {
-            transitions.append((from: from, to: to))
+            transitions.append((from: oldState, to: newState))
         }
     }
     
