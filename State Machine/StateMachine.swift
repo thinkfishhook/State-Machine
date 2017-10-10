@@ -2,6 +2,8 @@
 //  Copyright © 2017 Fish Hook LLC. All rights reserved.
 //
 
+import os
+
 public class StateMachine<T: StateMachineDelegate> {
     
     public weak var delegate: T?
@@ -30,6 +32,27 @@ public class StateMachine<T: StateMachineDelegate> {
             
         case .abort:
             return false
+        }
+    }
+
+    enum StateMachineError: Error {
+        case invalidTransition
+    }
+    
+    public func transition(to newState: T.State) throws
+    {
+        if transition(to: newState) {
+            return
+        }
+        
+        throw StateMachineError.invalidTransition
+    }
+    
+    public func transitionIfPossible(to newState: T.State)
+    {
+        let didTransition: Bool = transition(to: newState)
+        if !didTransition, let newState = newState as? CVarArg {
+            os_log("[STATE MACHINE] Did not transition to state %{public}@", type: .info, newState as CVarArg)
         }
     }
 }

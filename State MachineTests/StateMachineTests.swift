@@ -43,7 +43,7 @@ class StateMachineTests: XCTestCase {
     
     func testAllowedTransitionHappens()
     {
-        let transitioned = machine.transition(to: .middle)
+        let transitioned: Bool = machine.transition(to: .middle)
         
         XCTAssertTrue(transitioned)
         XCTAssertEqual(machine.state, .middle)
@@ -53,7 +53,7 @@ class StateMachineTests: XCTestCase {
     
     func testDisallowedTransitionDenied()
     {
-        let transitioned = machine.transition(to: .begin)
+        let transitioned: Bool = machine.transition(to: .begin)
         
         XCTAssertFalse(transitioned)
         XCTAssertEqual(machine.state, .begin)
