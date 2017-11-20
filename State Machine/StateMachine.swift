@@ -39,7 +39,7 @@ public class StateMachine<T: StateMachineDelegate> {
         case invalidTransition
     }
     
-    public func transition(to newState: T.State) throws
+    public func transitionWithError(to newState: T.State) throws
     {
         if transition(to: newState) {
             return
@@ -51,8 +51,11 @@ public class StateMachine<T: StateMachineDelegate> {
     public func transitionIfPossible(to newState: T.State)
     {
         let didTransition: Bool = transition(to: newState)
-        if !didTransition, let newState = newState as? CVarArg {
-            os_log("[STATE MACHINE] Did not transition to state %{public}@", type: .info, newState as CVarArg)
+        
+        guard let newState = newState as? CustomStringConvertible else { return }
+        
+        if !didTransition, let stateDescription = newState.description as? CVarArg {
+            os_log("[STATE MACHINE] Did not transition to state %{public}@", type: .info, stateDescription)
         }
     }
 }
